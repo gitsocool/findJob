@@ -13,7 +13,7 @@ bool Find(int *matrix,int rows,int columns,int objNum)
                  {  find=true;
                    break;
                  }
-               else if(*(matrix+row*columns+column)>objNum)
+               else if(matrix[row*columns+column]>objNum)
                     --column;
              else
                  ++row;
