@@ -39,7 +39,7 @@ void PrintTreeNode(BinaryTreeNode *pNode)
                    cout<<" left child is NULL "<<endl;
 
              if(pNode->pRight!=NULL)
-               cout <<" the value of its left child is : "<< pNode->pRight->value <<endl;
+               cout <<" the value of its right child is : "<< pNode->pRight->value <<endl;
              else
                    cout<<" right child is NULL "<<endl;
          
