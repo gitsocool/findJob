@@ -60,7 +60,8 @@ int main(){
      cout <<" please input the size for the array:"<<endl;   
      int size;
      cin >> size;
-     const int rr=size;
+      const  int rr=size;
+     //constexpr int rr=size;//error
      int a[rr];
      int in,index=0;
 
