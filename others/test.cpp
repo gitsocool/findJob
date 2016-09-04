@@ -1,27 +1,56 @@
-#include <iostream>
+#include<iostream>
+#include<string>
 using namespace std;
-#define DEBUG
-
-#define MIN(a,b) (((a)<(b)) ? a : b)
-
-int main ()
+bool Find(int *matrix,int rows,int columns,int objNum)
 {
-   int i, j;
-   i = 100;
-   j = 30;
-#ifdef DEBUG
-   cout <<"Trace: Inside main function" << endl;
-#endif
+      bool find=false;
 
-#if 0
-   /* 这是注释部分 */
-   cout << MKSTR(HELLO C++) << endl;
-#endif
+      if(matrix!=0 && rows>0 && columns>0)
+      {   int row=0,column=columns-1;
+          while(row<rows && column>=0)
+             {
+               if(matrix[row*columns+column]==objNum)
+                 {  find=true;
+                   break;
+                 }
+               else if(matrix[row*columns+column]>objNum)
+                    --column;
+             else
+                 ++row;
 
-   cerr <<"The minimum is " << MIN(i, j) << endl;
+              }
 
-#ifdef DEBUG
-   cerr <<"Trace: Coming out of main function" << endl;
-#endif
-    return 0;
+
+       }
+      return find;
 }
+void fortest(string testName,int *matrix,int rows,int columns,int objNum){
+    cout <<"---------"<<testName<<"---------"<<endl;
+    bool find =  Find(matrix,rows,columns,objNum);
+
+     if(find)
+      cout<<" zhao dao le "<< endl;
+      else
+      cout<<"mei zhao dao "<<endl;
+
+}
+void test1()
+{
+   int a;
+   cout <<" please input the number you want to find "<<endl;
+   cin >>a ;
+    int matrix[][4]={{1,2,8,9},{2,4,9,12},{4,7,10,13},{6,8,11,15}};
+    fortest("test1",(int*)matrix,4,4,a);
+  }
+
+int test7(){
+    fortest("test7",0,0,0,16);
+   
+}
+int main()
+{
+test1();
+test7();
+return 0;
+}
+

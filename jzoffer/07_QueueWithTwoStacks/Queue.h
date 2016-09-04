@@ -6,6 +6,7 @@ using std::stack;
 using std::cin;
 using std::cout;
 using std::endl;
+using std::cerr;
 template <typename T> class CQueue
 {
    public :
@@ -72,32 +73,3 @@ int CQueue<T>::size()
  {
     return stack1.size()+stack2.size();
  }
-
-int main(){
- CQueue<char> queue;
- char c; 
-cout <<" please imout some data to the queue!"<<endl;
-while(cin>>c){
- queue.appendTail(c);
-  }
- 
-  while(!queue.empty()){
-  try{
-    cout << queue.deleteHead()<<endl;
-    }
-    catch(std::exception & ex){
-        cout<<ex.what();
-     } 
-  }
- 
-   // to meet the exception on purpose 
-    try{
-      cout << queue.deleteHead()<<endl;
-      }
-      catch(std::exception & ex){
-          cout<<ex.what()<<endl;
-       }
-
-  return 0;
-}
-
