@@ -68,8 +68,8 @@ int main(){
      cout <<" please input numbers for the array:"<<endl; 
        while(cin >> in && index<size)
           a[index++]=in;
-  // auto length= end(a)-begin(a);
-    int length=size;
+  //   auto length= end(a)-begin(a);
+     int length=size;
     int*  p= bubble_sort(a,length);
     cout <<"length of the array:"<<length<<endl;
     for(int i=0;i<length;i++){
