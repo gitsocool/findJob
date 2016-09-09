@@ -9,14 +9,17 @@ bool isLucky(int n)
         f+=n1%10;
         n1=n1/10;   
      }
-  //  f+=n1;
       
       while(n2>0)
       {
-          g+=n%2;
-          n2=n2/2;  
+          g++;
+          n2=(n2-1) & n2;
+      
+      /*  //next also can evaluate
+          g+=n2%2;
+          n2=n2/2; 
+      */
       }
-    //  g+=n2;
       
       if(f==g) return true;
       else return false;
@@ -31,7 +34,7 @@ int main()
      
         cin >> n;
         int num=0;
-           for(int i=0;i<=n;i++)
+           for(int i=1;i<=n;i++)
            {
                if(isLucky(i)) ++num;
            }
